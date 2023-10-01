@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    #file-input {
+        margin-bottom: 20px;
+    }
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Detection</h1>
+        <input type="file" id="file-input" accept="image/*">
+        <button onclick="predict()">Predict</button>
+        <div id="result"></div>
+    </div>
+    function predict() {
+        var fileInput = document.getElementById('file-input');
+        var file = fileInput.files[0];
+    
+        if (file) {
+            // Simulate a prediction (replace this with your actual prediction logic)
+            var isTumor = Math.random() < 0.5;
+    
+            var resultElement = document.getElementById('result');
+            resultElement.innerText = 'Prediction Result: ' + (isTumor ? 'Tumor' : 'Non-Tumor');
+        } else {
+            alert('Please select an image first.');
+        }
+    }
+    
+</body>
+</html>
